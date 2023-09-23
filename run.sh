@@ -20,7 +20,7 @@ if [[ -z $postgres_stats ]]; then
 fi
 
 pipenv install
-pipenv shell
+#pipenv shell
 
 # Parse file to serpro.sql
 if ! [[ -f serpro.sql ]]; then
@@ -48,7 +48,4 @@ docker exec -u postgres postgres psql -d postgres -U postgres -c "alter table se
 docker exec -i -u postgres postgres psql <serpro.sql
 docker exec -i -u postgres postgres psql <serpro_pratica.sql
 
-# Create generated column for nota final
 
-# @TODO: remove
-# rm serpro.sql serpro_error.sql serpro_pratica.sql serpro_pratica_error.sql -f
